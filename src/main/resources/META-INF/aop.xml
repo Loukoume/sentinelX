@@ -1,6 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<!DOCTYPE aspectj PUBLIC "-//AspectJ//DTD//EN" "https://www.eclipse.org/aspectj/dtd/aspectj.dtd">
+<aspectj>
+    <weaver options="-Xset:weaveJavaxPackages=true -showWeaveInfo">
+        <include within="com.giteck.academy.sentinelx..*"/>
+    </weaver>
 
-</beans>
+    <aspects>
+        <aspect name="com.giteck.academy.sentinelx.aspect.retry.RetryAspect"/>
+    </aspects>
+</aspectj>
